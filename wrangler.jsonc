@@ -1,0 +1,10 @@
+{
+  "name": "sukashi",
+  "compatibility_date": "2024-06-28",
+  "assets": {
+    "directory": "./example"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

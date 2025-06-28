@@ -10,7 +10,7 @@
     "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["hdr", "brightness", "apple", "css-filter", "image-rendering"],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@10.8.1",

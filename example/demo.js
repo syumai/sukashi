@@ -158,6 +158,7 @@ function createImageDemo() {
     });
 }
 
+
 // Event listeners for image demo controls (removed since controls are now fixed)
 
 // Initialize demos

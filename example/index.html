@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukashi Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+        
+        .demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        
+        .demo-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .demo-description {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .sukashi-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .controls {
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            margin: 10px 0;
+        }
+        
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-right: 10px;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+        }
+        
+        button {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .warning {
+            background: #ff9500;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sukashi</h1>
+        <p class="subtitle">HDR Brightness Control Library for Apple Devices</p>
+        
+        <div class="warning" id="device-warning" style="display: none;">
+            ⚠️ This demo is optimized for Apple devices with HDR displays. 
+            Results may vary on other devices.
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Basic Grid Pattern</h2>
+            <p class="demo-description">
+                A simple 8x8 grid with alternating brightness values to demonstrate basic functionality.
+            </p>
+            <div class="sukashi-container" id="basic-demo"></div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Gradient Pattern</h2>
+            <p class="demo-description">
+                A smooth brightness gradient from dark to bright, showcasing the CSS brightness filter approach.
+            </p>
+            <div class="sukashi-container" id="gradient-demo"></div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Interactive Pattern</h2>
+            <p class="demo-description">
+                Control the brightness pattern with interactive controls.
+            </p>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Pixel Size:</label>
+                    <input type="range" id="pixel-size" min="2" max="10" value="4">
+                    <span id="pixel-size-value">4px</span>
+                </div>
+                <div class="control-group">
+                    <label>Max Brightness:</label>
+                    <input type="range" id="max-brightness" min="10" max="100" value="100">
+                    <span id="max-brightness-value">100%</span>
+                </div>
+                <div class="control-group">
+                    <button onclick="generateRandomPattern()">Random Pattern</button>
+                    <button onclick="generateWavePattern()">Wave Pattern</button>
+                    <button onclick="generateSpotlightPattern()">Spotlight</button>
+                </div>
+            </div>
+            <div class="sukashi-container" id="interactive-demo"></div>
+        </div>
+    </div>
+
+    <script src="../dist/index.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>

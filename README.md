@@ -2,11 +2,13 @@
 
 A TypeScript library for rendering brightness-controlled images in browsers, optimized for iPhone.
 
+## Demo
+
+**🔗 [Demo](https://sukashi.syumai.workers.dev/)**
+
 ## Inspiration
 
 This library was inspired by [ultra-white-button](https://github.com/set0gut1/ultra-white-button), which demonstrated the creative possibilities of using CSS brightness filters to achieve enhanced visual effects on iPhone.
-
-**🔗 [Demo](https://sukashi.syumai.workers.dev/)**
 
 ## Features
 

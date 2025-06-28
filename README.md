@@ -1,11 +1,13 @@
 # sukashi
 
-A TypeScript library for rendering HDR brightness-controlled images in browsers, optimized for Apple devices with HDR displays.
+A TypeScript library for rendering brightness-controlled images in browsers, optimized for iPhone.
+
+**🔗 [Demo](https://sukashi.syumai.workers.dev/)**
 
 ## Features
 
-- **HDR Brightness Control**: Uses CSS `brightness()` filters to control individual pixel brightness
-- **Apple Device Optimized**: Designed specifically for Apple devices with HDR display support
+- **Brightness Control**: Uses CSS `brightness()` filters to control individual pixel brightness
+- **iPhone Optimized**: Designed specifically for iPhone
 - **TypeScript Support**: Full TypeScript definitions included
 - **Multiple Output Formats**: ESM, CommonJS, and IIFE builds available
 - **Simple API**: Easy-to-use functions for creating and manipulating brightness arrays
@@ -76,14 +78,17 @@ Checks if the current device is an Apple device.
 
 See the `example/` directory for a complete demo with interactive controls. The example includes:
 
-- Basic checkerboard pattern
-- Gradient demonstrations
+- Image display from URL
+- Pattern demonstrations (checkerboard, gradient, random, wave, spotlight)
 - Interactive pattern generator
-- Real-time controls for pixel size and brightness
 
 ## Browser Support
 
-This library is optimized for Apple devices with HDR displays. While it will work on other devices, the HDR brightness effects may not be visible.
+This library is optimized for iPhone. While it will work on other devices, the brightness effects may not be visible.
+
+## Inspiration
+
+This library was inspired by [ultra-white-button](https://github.com/set0gut1/ultra-white-button), which demonstrated the creative possibilities of using CSS brightness filters to achieve enhanced visual effects on iPhone.
 
 ## License
 

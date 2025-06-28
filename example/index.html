@@ -72,6 +72,13 @@
             width: 200px;
         }
         
+        input[type="text"] {
+            width: 300px;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
         button {
             background: #007AFF;
             color: white;
@@ -107,44 +114,39 @@
         </div>
         
         <div class="demo-section">
-            <h2 class="demo-title">Basic Grid Pattern</h2>
+            <h2 class="demo-title">Image Display</h2>
             <p class="demo-description">
-                A simple 16x16 grid with alternating brightness values to demonstrate basic functionality.
-            </p>
-            <div class="sukashi-container" id="basic-demo"></div>
-        </div>
-        
-        <div class="demo-section">
-            <h2 class="demo-title">Gradient Pattern</h2>
-            <p class="demo-description">
-                A smooth brightness gradient from dark to bright, showcasing the brightness filter approach.
-            </p>
-            <div class="sukashi-container" id="gradient-demo"></div>
-        </div>
-        
-        <div class="demo-section">
-            <h2 class="demo-title">Interactive Pattern</h2>
-            <p class="demo-description">
-                Control the brightness pattern with interactive controls.
+                Load an image from URL and display it using sukashi brightness patterns.
             </p>
             <div class="controls">
                 <div class="control-group">
-                    <label>Pixel Size:</label>
-                    <input type="range" id="pixel-size" min="2" max="10" value="4">
-                    <span id="pixel-size-value">4px</span>
+                    <label>Image URL:</label>
+                    <input type="text" id="image-url" value="https://avatars.githubusercontent.com/u/6882878" placeholder="Enter image URL">
+                    <button onclick="loadImage()">Load Image</button>
                 </div>
+            </div>
+            <div class="sukashi-container" id="image-demo"></div>
+        </div>
+        
+        <div class="demo-section">
+            <h2 class="demo-title">Pattern Demos</h2>
+            <p class="demo-description">
+                Various brightness patterns to demonstrate different effects.
+            </p>
+            <div class="controls">
                 <div class="control-group">
-                    <label>Max Brightness:</label>
-                    <input type="range" id="max-brightness" min="10" max="100" value="100">
-                    <span id="max-brightness-value">100%</span>
-                </div>
-                <div class="control-group">
-                    <button onclick="generateRandomPattern()">Random Pattern</button>
-                    <button onclick="generateWavePattern()">Wave Pattern</button>
+                    <button onclick="generateCheckerboardPattern()">Basic Grid</button>
+                    <button onclick="generateGradientPattern()">Gradient</button>
+                    <button onclick="generateRandomPattern()">Random</button>
+                    <button onclick="generateWavePattern()">Wave</button>
                     <button onclick="generateSpotlightPattern()">Spotlight</button>
                 </div>
             </div>
-            <div class="sukashi-container" id="interactive-demo"></div>
+            <div class="sukashi-container" id="pattern-demo"></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc;">
+            <a href="https://github.com/syumai/sukashi" target="_blank" style="color: #007AFF; text-decoration: none;">View on GitHub</a>
         </div>
     </div>
 

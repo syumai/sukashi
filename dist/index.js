@@ -46,8 +46,9 @@ var Sukashi = (() => {
         pixel.style.width = `${pixelSize}px`;
         pixel.style.height = `${pixelSize}px`;
         pixel.style.backgroundColor = "white";
-        const brightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
-        pixel.style.filter = `brightness(${brightness}%)`;
+        const userBrightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
+        const cssBrightness = 100 + userBrightness;
+        pixel.style.filter = `brightness(${cssBrightness}%)`;
         element.appendChild(pixel);
       }
     }

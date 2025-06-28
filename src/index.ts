@@ -33,8 +33,9 @@ export function createSukashi(brightnessArray: BrightnessArray, options: Sukashi
       pixel.style.height = `${pixelSize}px`;
       pixel.style.backgroundColor = 'white';
       
-      const brightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
-      pixel.style.filter = `brightness(${brightness}%)`;
+      const userBrightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
+      const cssBrightness = 100 + userBrightness; // Map 0-100% to 100-200%
+      pixel.style.filter = `brightness(${cssBrightness}%)`;
       
       element.appendChild(pixel);
     }

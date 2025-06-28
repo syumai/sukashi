@@ -5,11 +5,11 @@ if (!Sukashi.isAppleDevice()) {
 
 // Basic demo - checkerboard pattern
 function createBasicDemo() {
-    const brightnessArray = Sukashi.createBrightnessArray(8, 8, 50);
+    const brightnessArray = Sukashi.createBrightnessArray(16, 16, 50);
     
     // Create checkerboard pattern
-    for (let y = 0; y < 8; y++) {
-        for (let x = 0; x < 8; x++) {
+    for (let y = 0; y < 16; y++) {
+        for (let x = 0; x < 16; x++) {
             const isEven = (x + y) % 2 === 0;
             Sukashi.setBrightness(brightnessArray, x, y, isEven ? 100 : 20);
         }
@@ -24,12 +24,12 @@ function createBasicDemo() {
 
 // Gradient demo
 function createGradientDemo() {
-    const brightnessArray = Sukashi.createBrightnessArray(16, 8, 0);
+    const brightnessArray = Sukashi.createBrightnessArray(32, 16, 0);
     
     // Create horizontal gradient
-    for (let y = 0; y < 8; y++) {
-        for (let x = 0; x < 16; x++) {
-            const brightness = Math.floor((x / 15) * 100);
+    for (let y = 0; y < 16; y++) {
+        for (let x = 0; x < 32; x++) {
+            const brightness = Math.floor((x / 31) * 100);
             Sukashi.setBrightness(brightnessArray, x, y, brightness);
         }
     }
@@ -42,7 +42,7 @@ function createGradientDemo() {
 }
 
 // Interactive demo
-let interactiveArray = Sukashi.createBrightnessArray(12, 12, 50);
+let interactiveArray = Sukashi.createBrightnessArray(24, 24, 50);
 let interactiveElement = null;
 
 function createInteractiveDemo() {
@@ -59,8 +59,8 @@ function createInteractiveDemo() {
 function generateRandomPattern() {
     const maxBrightness = parseInt(document.getElementById('max-brightness').value);
     
-    for (let y = 0; y < 12; y++) {
-        for (let x = 0; x < 12; x++) {
+    for (let y = 0; y < 24; y++) {
+        for (let x = 0; x < 24; x++) {
             const brightness = Math.floor(Math.random() * maxBrightness);
             Sukashi.setBrightness(interactiveArray, x, y, brightness);
         }
@@ -72,8 +72,8 @@ function generateRandomPattern() {
 function generateWavePattern() {
     const maxBrightness = parseInt(document.getElementById('max-brightness').value);
     
-    for (let y = 0; y < 12; y++) {
-        for (let x = 0; x < 12; x++) {
+    for (let y = 0; y < 24; y++) {
+        for (let x = 0; x < 24; x++) {
             const wave = Math.sin((x + y) * 0.5) * 0.5 + 0.5;
             const brightness = Math.floor(wave * maxBrightness);
             Sukashi.setBrightness(interactiveArray, x, y, brightness);
@@ -85,11 +85,11 @@ function generateWavePattern() {
 
 function generateSpotlightPattern() {
     const maxBrightness = parseInt(document.getElementById('max-brightness').value);
-    const centerX = 6;
-    const centerY = 6;
+    const centerX = 12;
+    const centerY = 12;
     
-    for (let y = 0; y < 12; y++) {
-        for (let x = 0; x < 12; x++) {
+    for (let y = 0; y < 24; y++) {
+        for (let x = 0; x < 24; x++) {
             const distance = Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
             const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2);
             const brightness = Math.floor((1 - distance / maxDistance) * maxBrightness);

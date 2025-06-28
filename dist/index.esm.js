@@ -19,9 +19,17 @@ function createSukashi(brightnessArray, options = {}) {
       pixel.style.width = `${pixelSize}px`;
       pixel.style.height = `${pixelSize}px`;
       pixel.style.backgroundColor = "white";
+      pixel.style.willChange = "filter";
       const userBrightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
-      const cssBrightness = 100 + userBrightness;
+      const cssBrightness = 100 + userBrightness * 0.2;
       pixel.style.filter = `brightness(${cssBrightness}%)`;
+      pixel.style.transition = `filter 0.1s ease`;
+      pixel.addEventListener("mouseenter", () => {
+        pixel.style.filter = `brightness(${cssBrightness}%)`;
+      });
+      pixel.addEventListener("mouseleave", () => {
+        pixel.style.filter = `brightness(${cssBrightness}%)`;
+      });
       element.appendChild(pixel);
     }
   }

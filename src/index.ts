@@ -32,10 +32,20 @@ export function createSukashi(brightnessArray: BrightnessArray, options: Sukashi
       pixel.style.width = `${pixelSize}px`;
       pixel.style.height = `${pixelSize}px`;
       pixel.style.backgroundColor = 'white';
+      pixel.style.willChange = 'filter';
       
       const userBrightness = Math.max(0, Math.min(100, brightnessArray.data[y][x]));
-      const cssBrightness = 100 + userBrightness; // Map 0-100% to 100-200%
+      const cssBrightness = 100 + (userBrightness * 0.2); // Map 0-100% to 100-120%
       pixel.style.filter = `brightness(${cssBrightness}%)`;
+      pixel.style.transition = `filter 0.1s ease`;
+      
+      // Add hover effect with same brightness
+      pixel.addEventListener('mouseenter', () => {
+        pixel.style.filter = `brightness(${cssBrightness}%)`;
+      });
+      pixel.addEventListener('mouseleave', () => {
+        pixel.style.filter = `brightness(${cssBrightness}%)`;
+      });
       
       element.appendChild(pixel);
     }
